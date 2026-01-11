@@ -9,6 +9,8 @@ declare global {
   const Activity: typeof import('react').Activity
   const Fragment: typeof import('react').Fragment
   const Input: typeof import('./components/Chatbot/Input').default
+  const Message: typeof import('./components/Chatbot/Message').default
+  const Messages: typeof import('./components/Chatbot/Messages').default
   const Suspense: typeof import('react').Suspense
   const cache: typeof import('react').cache
   const cacheSignal: typeof import('react').cacheSignal
