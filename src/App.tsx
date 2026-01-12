@@ -1,7 +1,12 @@
-import ChatbotApp from './components/Chatbot/ChatbotApp'
+import HomePage from './pages/HomePage'
 
-const App = () => {
-  return <ChatbotApp />
+const App: React.FC = () => {
+  return (
+    <>
+      {/*  <ChatbotApp /> */}
+      <HomePage />
+    </>
+  )
 }
 
 export default App

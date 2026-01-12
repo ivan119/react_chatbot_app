@@ -9,6 +9,7 @@ declare global {
   const Activity: typeof import('react').Activity
   const Button: typeof import('./components/Chatbot/Button/Button').default
   const ChatbotApp: typeof import('./components/Chatbot/ChatbotApp').default
+  const EcommerceApp: typeof import('./components/Ecommerce/EcommerceApp').default
   const Fragment: typeof import('react').Fragment
   const Input: typeof import('./components/Chatbot/Input/Input').default
   const Message: typeof import('./components/Chatbot/Message/Message').default
