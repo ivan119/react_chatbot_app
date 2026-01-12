@@ -25,17 +25,15 @@ const App = (): React.JSX.Element => {
 
     // Simulate robot response
     setTimeout(() => {
-      setIsLoading(false)
       const robotMessage: MessageProps = {
         id: crypto.randomUUID(),
         message: `Echo: ${text}`,
         sender: 'robot',
       }
       setMessages((prev) => [...prev, robotMessage])
-
-      // Focus back using ref API
-      setTimeout(() => inputRef.current?.focus(), 0)
-    }, 1000)
+      setIsLoading(false)
+      setTimeout(() => inputRef.current?.focus(), 100)
+    }, 200)
   }, []) // Empty deps means this function is created once
 
   return (
