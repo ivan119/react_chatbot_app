@@ -15,10 +15,9 @@ const Message = memo(({ message, sender }: MessageProps): React.JSX.Element => {
       <p className={styles.text}>{message}</p>
       <img
         src={sender === 'user' ? '/images/user.png' : '/images/robot.png'}
-        alt=""
+        alt={sender === 'user' ? 'User' : 'Robot'}
         width={32}
         height={32}
-        style={{ borderRadius: '50%' }}
       />
     </div>
   )

@@ -41,12 +41,12 @@ const App = (): React.JSX.Element => {
   return (
     <div className="container">
       <h1>Chatbot App</h1>
+      <Messages messages={messages} />
       <Input
         ref={inputRef}
         onSend={handleSendMessage}
         disabled={isLoading}
       />
-      <Messages messages={messages} />
     </div>
   )
 }
