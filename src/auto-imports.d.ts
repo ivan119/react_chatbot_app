@@ -7,10 +7,12 @@
 export {}
 declare global {
   const Activity: typeof import('react').Activity
+  const Button: typeof import('./components/Chatbot/Button/Button').default
   const Fragment: typeof import('react').Fragment
-  const Input: typeof import('./components/Chatbot/Input').default
-  const Message: typeof import('./components/Chatbot/Message').default
-  const Messages: typeof import('./components/Chatbot/Messages').default
+  const Input: typeof import('./components/Chatbot/Input/Input').default
+  const Message: typeof import('./components/Chatbot/Message/Message').default
+  const Messages: typeof import('./components/Chatbot/Messages/Messages').default
+  const SendIcon: typeof import('./components/icons/SendIcon').SendIcon
   const Suspense: typeof import('react').Suspense
   const cache: typeof import('react').cache
   const cacheSignal: typeof import('react').cacheSignal
@@ -39,4 +41,10 @@ declare global {
   const useState: typeof import('react').useState
   const useSyncExternalStore: typeof import('react').useSyncExternalStore
   const useTransition: typeof import('react').useTransition
+}
+// for type re-export
+declare global {
+  // @ts-ignore
+  export type { InputHandle } from './components/Chatbot/Input/Input'
+  import('./components/Chatbot/Input/Input')
 }

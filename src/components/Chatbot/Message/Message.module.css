@@ -1,0 +1,32 @@
+.message {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  width: 100%;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 0.75rem;
+  border-radius: 0.75rem;
+  animation: fadeIn 0.3s ease-out;
+}
+
+.user {
+  justify-content: flex-end;
+  background: rgba(99, 102, 241, 0.1); /* Slight primary tint */
+  margin-left: auto; /* Push to right */
+}
+
+.robot {
+  justify-content: flex-start;
+  background: rgba(30, 41, 59, 0.7);
+  margin-right: auto;
+}
+
+.text {
+  margin: 0;
+  line-height: 1.5;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(5px); }
+  to { opacity: 1; transform: translateY(0); }
+}

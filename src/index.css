@@ -54,7 +54,7 @@ body {
 }
 
 .container {
-  max-width: 1200px;
+  max-width: 963px;
   margin: 0 auto;
   padding: 2rem;
   display: flex;
@@ -143,58 +143,4 @@ body {
 .card:hover {
   transform: translateY(-8px);
   background: rgba(255, 255, 255, 0.05);
-}
-
-.input-container {
-  margin-bottom: 2rem;
-}
-
-.send-button {
-  border-radius: 0.5rem;
-  font-weight: 600;
-  cursor: pointer;
-  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
-  text-decoration: none;
-  display: inline-block;
-  min-width: 100px;
-}
-
-.message {
-  display: flex;
-  gap: 1rem;
-  align-items: center;
-  width: 100%;
-  max-width: 639px;
-  border: 1px solid var(--border);
-  margin: 0.5rem;
-  padding: 0.3rem;
-}
-
-.user-message {
-  justify-content: flex-end;
-}
-
-.robot-message {
- flex-direction: row-reverse;
- justify-content: start;
-}
-
-.error-message {
-  color: #ef4444;
-  margin-top: 0.3rem;
-  font-size: 0.8rem;
-  animation: slideDownFadeIn 0.963s cubic-bezier(0.16, 1, 0.3, 1);
-  transform-origin: top;
-  position: absolute;
-}
-
-@keyframes slideDownFadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(-10px) scale(0.95);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0) scale(1);
-  }
 }

@@ -1,0 +1,113 @@
+/* Input Module Styles */
+.inputContainer {
+  position: relative;
+  width: 100%;
+  display: flex;
+  gap: 0.75rem;
+  padding: 0.75rem;
+  background: rgba(15, 23, 42, 0.8);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-radius: 1.25rem;
+  box-shadow: 
+    0 4px 6px -1px rgba(0, 0, 0, 0.1),
+    0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  margin-top: 0.69rem;
+  z-index: 1;
+}
+
+/* Spectrum Gradient Border (The "Glow" Engine) */
+.inputContainer::before {
+  content: "";
+  position: absolute;
+  inset: -2px;
+  border-radius: 1.4rem;
+  background: linear-gradient(
+    90deg, 
+    #ff0080, #7928ca, #ff0080, #7928ca
+  );
+  background-size: 400% 100%;
+  z-index: -1;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  animation: spectrumMove 8s linear infinite;
+}
+
+/* Inner Glass Border (Default state) */
+.inputContainer::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 1.25rem;
+  padding: 1px;
+  background: linear-gradient(to bottom right, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.05));
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+}
+
+/* Interaction States */
+.inputContainer:focus-within {
+  transform: translateY(-2px);
+  box-shadow: 
+    0 0 20px -5px rgba(121, 40, 202, 0.3),
+    0 10px 15px -3px rgba(0, 0, 0, 0.2);
+}
+
+.inputContainer:focus-within::before {
+  opacity: 1;
+}
+
+.loading {
+  position: relative; /* ensure class is exported and not empty */
+}
+.loading::before {
+  opacity: 1;
+  filter: blur(8px);
+  animation: spectrumMove 2s linear infinite;
+}
+
+.inputField {
+  flex: 1;
+  background: transparent;
+  border: none;
+  outline: none;
+  color: var(--text-main);
+  font-size: 1rem;
+  padding: 0.5rem 0.75rem;
+  font-family: inherit;
+}
+
+.inputField::placeholder {
+  color: var(--text-muted);
+  opacity: 0.6;
+}
+
+.errorMessage {
+  color: #ef4444;
+  margin-top: 0rem;
+  font-size: 0.8rem;
+  animation: slideDownFadeIn 0.963s cubic-bezier(0.16, 1, 0.3, 1);
+  transform-origin: top;
+  position: absolute;
+  bottom: -1.8rem;
+  left: 1rem;
+}
+
+@keyframes spectrumMove {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 100% 50%; }
+}
+
+@keyframes slideDownFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
